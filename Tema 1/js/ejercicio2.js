@@ -1,39 +1,18 @@
-function beHappy(value) {
+var arr = new Array();
+var inicio = 1;
 
-    let repeat = [];
-  
-    /**
-     * Verifica se o valor é maior que 1 e se
-     * o valor não é repetido, isso irá evitar
-     * um loop infinito
-     */
-    while (value > 1 && !~repeat.indexOf(value)) {
-      let result = 0;
-  
-      /**
-       * Adiciona o valor para na variável
-       * repeat para evitar o loop infinito
-       */
-      repeat.push(value);
-  
-      /* Quebra a string em pedaços */
-      for (let n of value.toString().split("")) {
-  
-        /**
-         * Utiliza o Math.pow para calcular a base
-         * elevado ao expoente. É o mesmo que n * n
-         */
-        result += Math.pow(n, 2)
-      }
-  
-      value = result;
+for (let index = 0; index < 5; index++) {
+    
+
+    arr = inicio.toString().split("");
+    var suma = 0;
+
+    for (let index = 0; index < arr.length; index++) {
+        var suma = Math.pow(arr[index],2) + suma;
     }
-  
-    return value == 1;
-  }
-  
-  for (let i = 0; i <= 50; i++) {
-    if (beHappy(i)) {
-      console.log(i);
-    }
-  }
+
+    arr = new Array();
+    document.write(suma + "<br>");
+    inicio = suma;
+
+}
