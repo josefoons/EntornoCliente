@@ -34,7 +34,7 @@ function mail(correo) {
 
 
 
- function direccion(ip) {
+function direccion(ip) {
     return /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(ip);
 }
 
@@ -55,33 +55,37 @@ var correo = prompt("Dime el correo");
 var ip = prompt("Dime la IP");
 var url = prompt("Dime la url");
 
-
-if (mail(correo)) {
-    document.write("correo OK");
-} else {
-    document.write("correo NO");
-}
-
 if (documento(dni)) {
-    document.write("<br>" + "dni OK");
+    document.write("El dni es correcto. ");
 } else {
-    document.write("<br>" + "dni NO");
+    document.write("El dni NO es correcto. ");
 }
+document.write(dni);
 
 if (telf(telefono)) {
-    document.write("<br>" + "telf OK");
+    document.write("<br>" + "El telefono es correcto. ");
 } else {
-    document.write("<br>" + "telf NO");
+    document.write("<br>" + "El telefono NO es correcto. ");
 }
+document.write(telefono);
+
+if (mail(correo)) {
+    document.write("<br>" + "El correo es correcto. ");
+} else {
+    document.write("<br>" + "El correo NO es correcto. ");
+}
+document.write(correo);
 
 if (direccion(ip)) {
-    document.write("<br>" + "ip OK");
+    document.write("<br>" + "La direccion IP es correcta. ");
 } else {
-    document.write("<br>" + "ip NO");
+    document.write("<br>" + "La direccion IP NO es correcta. ");
 }
+document.write(ip);
 
 if (link(url)) {
-    document.write("<br>" + "url OK");
+    document.write("<br>" + "La direccion web es correcta. ");
 } else {
-    document.write("<br>" + "url NO");
+    document.write("<br>" + "La direccion web NO es correcta. ");
 }
+document.write(url);
