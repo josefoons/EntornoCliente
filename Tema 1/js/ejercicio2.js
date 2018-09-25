@@ -39,6 +39,6 @@ function hazmeFeliz(value) {
 
 for (let i = 0; i <= 20; i++) {
     if (hazmeFeliz(i)) {
-        document.write(i + "<br>")
+        document.write("Numero Feliz: " + i + "<br>")
     }
 }
