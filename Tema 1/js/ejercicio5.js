@@ -7,4 +7,4 @@ var anyo = prompt("Dime el año");
 var dias = diasMes(mes, anyo);
 
 
-document.write(dias);
+document.write("Cantidad: " + dias);
