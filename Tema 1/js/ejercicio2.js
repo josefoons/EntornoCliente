@@ -17,7 +17,7 @@ for (let index = 0; index < 5; index++) {
 
 } */
 
-function beHappy(value) {
+function hazmeFeliz(value) {
 
     let repeat = [];
 
@@ -38,7 +38,7 @@ function beHappy(value) {
 }
 
 for (let i = 0; i <= 20; i++) {
-    if (beHappy(i)) {
+    if (hazmeFeliz(i)) {
         document.write(i + "<br>")
     }
 }
