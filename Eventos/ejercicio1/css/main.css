@@ -36,3 +36,7 @@ input[type=password] {
     width: 95%;
     margin-left: 10px;
 }
+
+label {
+    font-size: 15px;
+}

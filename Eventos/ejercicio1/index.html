@@ -15,19 +15,19 @@
     <div>
         <form action="" method="POST"> <!-- Aqui el post o el get -->
             <label for="fname">Nombre</label>
-            <input type="text" id="fnombre" name="nombre" placeholder="Tu nombre">
+            <input type="text" id="fnombre" name="nombre" placeholder="Tu nombre" onblur="datoAMayus(this)">
             <br>
 
             <label for="lname">Apellidos</label>
-            <input type="text" id="fapellidos" name="apellidos" placeholder="Tus apellidos">
+            <input type="text" id="fapellidos" name="apellidos" placeholder="Tus apellidos" onblur="datoAMayus(this)">
             <br>
 
             <label for="lname">Correo Electronico</label>
-            <input type="text" id="fmail" name="mail" placeholder="Tu correo electronico">
+            <input type="text" id="fmail" name="mail" placeholder="Tu correo electronico" onblur="correo(this)">
             <br>
 
             <label for="lname">DNI</label>
-            <input type="text" id="fdni" name="dni" placeholder="Tu DNI">
+            <input type="text" id="fdni" name="dni" placeholder="Tu DNI" onblur="documento(this)">
             <br>
 
             <label for="lname">Contrasenya</label>
@@ -39,7 +39,7 @@
             <br>
 
             <label for="lname">IP Equipo</label>
-            <input type="text" id="fip" name="ep" placeholder="Tu IP">
+            <input type="text" id="fip" name="ep" placeholder="Tu IP" onblur="ip(this)">
             <br>
 
             <input type="submit" value="Submit">
