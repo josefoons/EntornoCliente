@@ -42,11 +42,25 @@ function ip(direccion) {
     }
 }
 
-function datoAMayus(dato) {
+//Este funciona con solo un nombre por input (jose = Jose)
+/* function datoAMayus(dato) {
     dato.value = dato.value.toLowerCase();
     var charArray = dato.value.split("");
     charArray[0] = charArray[0].toUpperCase();
     dato.value = charArray.join("");
+} */
+
+//Este funciona con varios nombres en el mismo input (jose manuel == Jose Manuel)
+function datoAMayus(dato) {
+    dato.value = dato.value.toLowerCase();
+    var total = dato.value.split(" ");
+    var individuo = 0;
+
+    for (let index = 0; index < total.length; index++) {
+        //alert(total[index]);
+        total[index] = total[index].replace(total[index][0],total[index][0].toUpperCase());
+    }
+    dato.value = total.join(" ");
 }
 
 var contrasenya = 0;
