@@ -31,11 +31,11 @@
             <br>
 
             <label for="lname">Contrasenya</label>
-            <input type="password" id="fpass" name="contrasenya" placeholder="Tu contrasenya">
+            <input type="password" id="fpass" name="contrasenya" placeholder="Tu contrasenya" onblur="getPass(this)">
             <br>
 
             <label for="lname">Repetir Contrasenya</label>
-            <input type="password" id="fpassRepit" name="ContrasenyaR" placeholder="Repita la contrasenya">
+            <input type="password" id="fpassRepit" name="ContrasenyaR" placeholder="Repita la contrasenya" onblur="validarContrasenya(this)">
             <br>
 
             <label for="lname">IP Equipo</label>
