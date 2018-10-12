@@ -1,0 +1,39 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#uno {
+    border: 1px solid black;
+    width: 49.5%;
+    display: inline-block;
+    margin: auto;
+    height: 49.5%;
+    background-color: blue;
+}
+
+#dos {
+    border: 1px solid black;
+    width: 49.5%;
+    display: inline-block;
+    height: 49.5%;
+    background-color: green;
+}
+
+#tres {
+    border: 1px solid black;
+    width: 49.5%;
+    display: inline-block;
+    height: 49.5%;
+    background-color: yellow;
+}
+
+#cuatro {
+    border: 1px solid black;
+    width: 49.5%;
+    display: inline-block;
+    height: 49.5%;
+    background-color: red;
+}
