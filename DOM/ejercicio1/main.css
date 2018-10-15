@@ -6,34 +6,59 @@ body, html {
 }
 
 #uno {
-    border: 1px solid black;
-    width: 49.5%;
-    display: inline-block;
-    margin: auto;
-    height: 49.5%;
+    width: 50%;
+    float: left;
+    height: 50%;
     background-color: blue;
 }
 
 #dos {
-    border: 1px solid black;
-    width: 49.5%;
-    display: inline-block;
-    height: 49.5%;
+    width: 50%;
+    float: left;
+    height: 50%;
     background-color: green;
 }
 
 #tres {
-    border: 1px solid black;
-    width: 49.5%;
-    display: inline-block;
-    height: 49.5%;
+    width: 50%;
+    float: left;
+    height: 50%;
     background-color: yellow;
 }
 
 #cuatro {
-    border: 1px solid black;
-    width: 49.5%;
-    display: inline-block;
-    height: 49.5%;
+    width: 50%;
+    float: left;
+    height: 50%;
     background-color: red;
+}
+
+
+
+#boton1 {
+    margin-top: 43%;
+    margin-left: -50%;
+    overflow: visible;
+    position: relative;
+}
+
+#boton2 {
+    margin-left: 96.5%;
+    margin-top: 20%;
+    overflow: visible;
+    position: relative;
+}
+
+#boton3{
+    overflow: visible;
+    position: relative;
+    margin-left: 97%;
+    margin-top: 20%;
+}
+
+#boton4 {
+    margin-top: -15%;
+    margin-left: 50%;
+    overflow: visible;
+    position: relative;
 }
