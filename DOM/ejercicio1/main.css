@@ -10,6 +10,7 @@ body, html {
     float: left;
     height: 50%;
     background-color: blue;
+    position: relative;
 }
 
 #dos {
@@ -17,6 +18,11 @@ body, html {
     float: left;
     height: 50%;
     background-color: green;
+    position: relative;
+}
+
+#dos textarea {
+    float:left;
 }
 
 #tres {
@@ -24,6 +30,7 @@ body, html {
     float: left;
     height: 50%;
     background-color: yellow;
+    position: relative;
 }
 
 #cuatro {
@@ -31,34 +38,37 @@ body, html {
     float: left;
     height: 50%;
     background-color: red;
-}
-
-
-
-#boton1 {
-    margin-top: 43%;
-    margin-left: -50%;
-    overflow: visible;
     position: relative;
 }
 
-#boton2 {
-    margin-left: 96.5%;
-    margin-top: 20%;
-    overflow: visible;
-    position: relative;
+#botonRojo {
+    height:50px;
+    width:150px;
+    top: -25px;
+    left:calc(50% - 75px);
+    position: absolute;
 }
 
-#boton3{
-    overflow: visible;
-    position: relative;
-    margin-left: 97%;
-    margin-top: 20%;
+#botonAzul {
+    height:50px;
+    width:150px;
+    top: -25px;
+    left: calc(50% - 75px);
+    position: absolute;
 }
 
-#boton4 {
-    margin-top: -15%;
-    margin-left: 50%;
-    overflow: visible;
-    position: relative;
+#botonVerde {
+    height:50px;
+    width:150px;
+    top: calc(50% - 75px);
+    left:-75px;
+    position: absolute;
+}
+
+#botonAmarillo {
+    height:50px;
+    width:150px;
+    top: calc(50% - 75px);
+    left: -75px;
+    position: absolute;
 }

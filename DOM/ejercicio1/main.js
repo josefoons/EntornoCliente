@@ -15,17 +15,18 @@ function colocarTexto2() {
 }
 
 function colocarTexto3() {
-    var nodoPadre = document.getElementById("cuatro");
-    var parrafo = document.createElement("div");
-    var texto = document.createTextNode("Texto 3");
-    parrafo.appendChild(texto);
-    nodoPadre.appendChild(parrafo);    
-}
-
-function colocarTexto4() {
+   
     var nodoPadre = document.getElementById("tres");
     var parrafo = document.createElement("button");
     var texto = document.createTextNode("Texto 4");
     parrafo.appendChild(texto);
     nodoPadre.appendChild(parrafo);    
+}
+
+function colocarTexto4() {
+    var nodoPadre = document.getElementById("cuatro");
+    var parrafo = document.createElement("div");
+    var texto = document.createTextNode("Texto 3");
+    parrafo.appendChild(texto);
+    nodoPadre.appendChild(parrafo); 
 }
