@@ -23,15 +23,17 @@ function vuelveSombra(elemento) {
 
 }
 
-function eliminarTodo(elemento) {
+function eliminarTodo() {
     
-    /* var padre = elemento.parentNode;
-    var abuelo = padre.parentNode;
-    abuelo.removeChild(padre); */
+    var nodoEliminar = document.getElementById("cuadrado");
+    var empleado = nodoEliminar.parentNode;
+    empleado.removeChild(nodoEliminar);
 
-    var nodoEliminar = docuemnt.getElementById(elemento.id);
-    var emepleado = nodoEliminar.parentNode;
-    var jefe = empleado.parentNode;
-    jefe.removeC
+}
+
+function cuadrado(elemento) {
+    
+    document.getElementById(elemento.id).style.borderRadius = "0%"; 
+    document.getElementById(elemento.id).style.transition = "all 1s ease-in-out";
 
 }

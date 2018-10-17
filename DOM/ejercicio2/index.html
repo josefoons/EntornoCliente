@@ -12,24 +12,24 @@
 
 <body>
 
-    <div class="cuadro">
-        <div class="cubo" id="uno" onmousedown="eliminarSobra(this)" onmouseup="vuelveSombra(this)" ondblclick="sombraInterior(this)" onmouseover="circulo(this)"></div>
-        <div class="contenedor"><input type="button" value="Eliminar"  onclick="eliminarTodo(this)"></div>
+    <div id="cuadrado" class="cuadro">
+        <div class="cubo" id="uno" onmousedown="eliminarSobra(this)" onmouseup="vuelveSombra(this)" ondblclick="sombraInterior(this)" onmouseover="circulo(this)" onmouseout="cuadrado(this)"></div>
+        <input class="contenedor" type="button" value="Eliminar"  onclick="eliminarTodo()" />
     </div>
 
-    <div class="cuadro" >
-        <div class="cubo" id="dos" onmousedown="eliminarSobra(this)" onmouseup="vuelveSombra(this)" ondblclick="sombraInterior(this)" onmouseover="circulo(this)"></div>
-        <input class="contenedor" type="button" value="Eliminar" >
+    <div id="cuadrado" class="cuadro" >
+        <div class="cubo" id="dos" onmousedown="eliminarSobra(this)" onmouseup="vuelveSombra(this)" ondblclick="sombraInterior(this)" onmouseover="circulo(this)" onmouseout="cuadrado(this)" ></div>
+        <input class="contenedor" type="button" value="Eliminar" onclick="eliminarTodo()" />
     </div>
 
-    <div class="cuadro" >
-        <div class="cubo" id="tres" onmousedown="eliminarSobra(this)" onmouseup="vuelveSombra(this)" ondblclick="sombraInterior(this)" onmouseover="circulo(this)"></div>
-        <input class="contenedor" type="button" value="Eliminar" >
+    <div id="cuadrado" class="cuadro" >
+        <div class="cubo" id="tres" onmousedown="eliminarSobra(this)" onmouseup="vuelveSombra(this)" ondblclick="sombraInterior(this)" onmouseover="circulo(this)" onmouseout="cuadrado(this)"></div>
+        <input class="contenedor" type="button" value="Eliminar" onclick="eliminarTodo()" />
     </div>
 
-    <div class="cuadro" >
-        <div class="cubo" id="cuatro" onmousedown="eliminarSobra(this)" onmouseup="vuelveSombra(this)" ondblclick="sombraInterior(this)" onmouseover="circulo(this)"></div>
-        <input class="contenedor" type="button" value="Eliminar">
+    <div id="cuadrado" class="cuadro" >
+        <div class="cubo" id="cuatro" onmousedown="eliminarSobra(this)" onmouseup="vuelveSombra(this)" ondblclick="sombraInterior(this)" onmouseover="circulo(this)" onmouseout="cuadrado(this)"></div>
+        <input class="contenedor" type="button" value="Eliminar" onclick="eliminarTodo()" />
     </div>
 
 </body>
