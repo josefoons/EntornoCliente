@@ -6,34 +6,69 @@ body, html {
 }
 
 #uno {
-    border: 1px solid black;
-    width: 49.5%;
-    display: inline-block;
-    margin: auto;
-    height: 49.5%;
+    width: 50%;
+    float: left;
+    height: 50%;
     background-color: blue;
+    position: relative;
 }
 
 #dos {
-    border: 1px solid black;
-    width: 49.5%;
-    display: inline-block;
-    height: 49.5%;
+    width: 50%;
+    float: left;
+    height: 50%;
     background-color: green;
+    position: relative;
+}
+
+#dos textarea {
+    float:left;
 }
 
 #tres {
-    border: 1px solid black;
-    width: 49.5%;
-    display: inline-block;
-    height: 49.5%;
+    width: 50%;
+    float: left;
+    height: 50%;
     background-color: yellow;
+    position: relative;
 }
 
 #cuatro {
-    border: 1px solid black;
-    width: 49.5%;
-    display: inline-block;
-    height: 49.5%;
+    width: 50%;
+    float: left;
+    height: 50%;
     background-color: red;
+    position: relative;
+}
+
+#botonRojo {
+    height:50px;
+    width:150px;
+    top: -25px;
+    left:calc(50% - 75px);
+    position: absolute;
+}
+
+#botonAzul {
+    height:50px;
+    width:150px;
+    top: -25px;
+    left: calc(50% - 75px);
+    position: absolute;
+}
+
+#botonVerde {
+    height:50px;
+    width:150px;
+    top: calc(50% - 75px);
+    left:-75px;
+    position: absolute;
+}
+
+#botonAmarillo {
+    height:50px;
+    width:150px;
+    top: calc(50% - 75px);
+    left: -75px;
+    position: absolute;
 }

@@ -8,15 +8,16 @@ function colocarTexto1() {
 
 function colocarTexto2() {
     var nodoPadre = document.getElementById("dos");
-    var parrafo = document.createElement("p");
+    var parrafo = document.createElement("textarea");
     var texto = document.createTextNode("Texto 2");
     parrafo.appendChild(texto);
     nodoPadre.appendChild(parrafo);    
 }
 
 function colocarTexto3() {
+   
     var nodoPadre = document.getElementById("tres");
-    var parrafo = document.createElement("p");
+    var parrafo = document.createElement("button");
     var texto = document.createTextNode("Texto 3");
     parrafo.appendChild(texto);
     nodoPadre.appendChild(parrafo);    
@@ -24,15 +25,8 @@ function colocarTexto3() {
 
 function colocarTexto4() {
     var nodoPadre = document.getElementById("cuatro");
-    var parrafo = document.createElement("p");
+    var parrafo = document.createElement("div");
     var texto = document.createTextNode("Texto 4");
     parrafo.appendChild(texto);
-    nodoPadre.appendChild(parrafo);    
-}
-
-function colocarTexto() {
-    colocarTexto1();
-    colocarTexto2();
-    colocarTexto3();
-    colocarTexto4();
+    nodoPadre.appendChild(parrafo); 
 }
