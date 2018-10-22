@@ -1,3 +1,7 @@
+html, body {
+    margin-top: 6%;
+}
+
 .cubo {
     float: left;
     margin-left:calc(50% - 150px);
