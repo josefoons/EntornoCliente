@@ -1,0 +1,9 @@
+input {
+    margin: 10px;
+}
+
+#anyadir {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
