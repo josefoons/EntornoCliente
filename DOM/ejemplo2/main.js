@@ -1,8 +1,14 @@
-var patata = document.getElementById("cosa").addEventListener("click", coords, false);
-
-function coords() {
-    var x = patata.clientX;
-    var y = patata.clientY;
-    var coor = "X coords: " + x + ", Y coords: " + y;
-    document.getElementById("demo").innerHTML = coor;
+function cargar() {
+    document.getElementById('cosa').addEventListener("click", coords, false);
 }
+
+function coords(evento) {
+                
+    var x = evento.clientX;
+    var y = evento.clientY;
+    
+    document.getElementById('demo').innerHTML = " X = " + x + "][ Y = " + y;
+    
+}
+
+document.addEventListener("DOMContentLoaded",cargar,false);
