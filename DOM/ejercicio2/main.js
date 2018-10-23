@@ -23,11 +23,11 @@ function vuelveSombra(elemento) {
 
 }
 
-function eliminarTodo() {
+function eliminarTodo(elemento) {
     
-    var nodoEliminar = document.getElementById("cuadrado");
-    var empleado = nodoEliminar.parentNode;
-    empleado.removeChild(nodoEliminar);
+    var padre = elemento.parentNode;
+    var abuelo = padre.parentNode;
+    abuelo.removeChild(padre);
 
 }
 
