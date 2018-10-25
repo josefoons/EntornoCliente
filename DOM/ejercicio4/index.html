@@ -6,15 +6,19 @@
     <title>Formulario Rancio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="main.js"></script>
 </head>
 <body>
-    <div id="form1">
-        <label>DNI</label><input type="text" id="dni" disabled>
-        <label>Nombre</label><input type="text" id="nombre" disabled>
-        <label>Apellidos</label><input type="text" id="apellidos" disabled>
-        <button id="eliminar"><img src="delete.png" /></button>
-        <button id="lapiz"><img src="editar.png" /></button>
+    <div id="form0" class="form-inline">
+        <label>DNI</label><input class="form-control" type="text" id="dni" disabled>
+        <label>Nombre</label><input class="form-control" type="text" id="nombre" disabled>
+        <label>Apellidos</label><input class="form-control" type="text" id="apellidos" disabled>
+        <button id="eliminar" class="btn btn-danger" disabled><img src="delete.png" /></button>
+        <button id="lapiz" class="btn btn-success" ><img src="editar.png" /></button>
     </div>
 
     <input type="image" src="add.png" id="anyadir">

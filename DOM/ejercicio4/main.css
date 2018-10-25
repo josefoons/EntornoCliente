@@ -1,5 +1,9 @@
-input {
+label {
     margin: 10px;
+}
+
+div {
+    margin: 1%;
 }
 
 #anyadir {
