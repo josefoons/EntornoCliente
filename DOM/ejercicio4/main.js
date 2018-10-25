@@ -4,12 +4,12 @@ var rutaDelete = "delete.png";
 var rutaLapiz = "editar.png";
 
 function cargar() {
-    document.getElementById("lapiz").addEventListener("click", iniciaInputs);
-    document.getElementById("eliminar").addEventListener("click", preguntaEliminar);
+    document.getElementById("lapiz0").addEventListener("click", iniciaInputs);
+    document.getElementById("eliminar0").addEventListener("click", preguntaEliminar);
     document.getElementById("anyadir").addEventListener("click", ponerNuevos);
-    document.getElementById("dni").addEventListener("blur", comprobarInputs);
-    document.getElementById("nombre").addEventListener("blur", comprobarInputs);
-    document.getElementById("apellidos").addEventListener("blur", comprobarInputs);
+    document.getElementById("inputD0").addEventListener("blur", comprobarInputs);
+    document.getElementById("inputN0").addEventListener("blur", comprobarInputs);
+    document.getElementById("inputA0").addEventListener("blur", comprobarInputs);
 }
 
 function iniciaInputs() {
@@ -40,15 +40,13 @@ function preguntaEliminar() {
 
 function comprobarInputs() {
     
-    //alert("FUNCIONO");
     var inputId = this.id;
-    var padre = this.parentNode;
-    var inputs = padre.getElementsByTagName("input");
-    var idPillada = inputId.slice(-1); //Arreglar ID
-    var botonEliminar = padre.getElementById("eliminar" + idPillada);
+    var papa = this.parentNode;
+    var inputs = papa.getElementsByTagName("input");
+    var idPillada = inputId.substring(6, inputId.length);
+    var botonEliminar = document.getElementById("eliminar" + idPillada);
 
     if (inputs[0].value != "" && inputs[1].value != "" && inputs[2].value != "") {
-        alert("entrado");
         botonEliminar.disabled = false;
     }
 
@@ -59,9 +57,9 @@ function ponerNuevos() {
 
     lineas++;
     id = "form" + lineas;
-    idDNI = "dni" + lineas;
-    idNombre = "nombre" + lineas;
-    idApellidos = "apellidos" + lineas;
+    idDNI = "inputD" + lineas;
+    idNombre = "inputN" + lineas;
+    idApellidos = "inputA" + lineas;
     idLapiz = "lapiz" + lineas;
     idEliminar = "eliminar" + lineas;
 
