@@ -7,9 +7,9 @@ function cargar() {
     document.getElementById("lapiz0").addEventListener("click", iniciaInputs);
     document.getElementById("eliminar0").addEventListener("click", preguntaEliminar);
     document.getElementById("anyadir").addEventListener("click", ponerNuevos);
-    document.getElementById("inputD0").addEventListener("blur", comprobarInputs);
-    document.getElementById("inputN0").addEventListener("blur", comprobarInputs);
-    document.getElementById("inputA0").addEventListener("blur", comprobarInputs);
+    document.getElementById("inputD0").addEventListener("input", comprobarInputs);
+    document.getElementById("inputN0").addEventListener("input", comprobarInputs);
+    document.getElementById("inputA0").addEventListener("input", comprobarInputs);
 }
 
 function iniciaInputs() {
@@ -89,7 +89,7 @@ function ponerNuevos() {
     dniInput.setAttribute("id", idDNI); 
     dniInput.setAttribute("class", "form-control");
     dniInput.disabled = true;
-    dniInput.addEventListener("blur", comprobarInputs);
+    dniInput.addEventListener("input", comprobarInputs);
     nodoPadre.appendChild(dniInput);
 
     //Crear Nombre
@@ -101,7 +101,7 @@ function ponerNuevos() {
     nombreInput.setAttribute("type", "text");
     nombreInput.setAttribute("class", "form-control");
     nombreInput.setAttribute("id", idNombre); 
-    nombreInput.addEventListener("blur", comprobarInputs);
+    nombreInput.addEventListener("input", comprobarInputs);
     nombreInput.disabled = true;
     nodoPadre.appendChild(nombreInput);
 
@@ -115,7 +115,7 @@ function ponerNuevos() {
     apellidosInput.setAttribute("id", idApellidos); 
     apellidosInput.disabled = true;
     apellidosInput.setAttribute("class", "form-control");
-    apellidosInput.addEventListener("blur", comprobarInputs);
+    apellidosInput.addEventListener("input", comprobarInputs);
     nodoPadre.appendChild(apellidosInput);
 
     // Crear eliminar
