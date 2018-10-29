@@ -7,7 +7,7 @@ div {
 }
 
 #anyadir {
-    position: absolute;
     right: 0;
     bottom: 0;
+    position: fixed;
 }
