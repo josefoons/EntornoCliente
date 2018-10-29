@@ -48,12 +48,14 @@ function comprobarInputs() {
 
     if (inputs[0].value != "" && inputs[1].value != "" && inputs[2].value != "") {
         botonEliminar.disabled = false;
-    }
-
-    //Si alguno esta vacio se vuelve a bloquear.
-    if (inputs[0].value == "" || inputs[1].value == "" || inputs[2].value == "") {
+    } else {
         botonEliminar.disabled = true;
     }
+
+/*     //Si alguno esta vacio se vuelve a bloquear.
+    if (inputs[0].value == "" || inputs[1].value == "" || inputs[2].value == "") {
+        botonEliminar.disabled = true;
+    } */
 
 }
 
