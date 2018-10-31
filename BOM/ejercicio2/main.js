@@ -8,6 +8,7 @@ function cargar() {
     document.getElementById("irFinal").addEventListener("click", finalVideo);
     document.getElementById("volverAtras").addEventListener("click", volverAtras);
     document.getElementById("irAlante").addEventListener("click", irAlante);
+    
 }
 
 function obtenerVideo(element) {
@@ -90,4 +91,3 @@ function irAlante() {
     video.currentTime = videoActual + 5.0;
 
 }
-
