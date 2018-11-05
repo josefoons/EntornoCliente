@@ -1,33 +1,42 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>VideoPorno</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-        <script src="main.js"></script>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>VideoPorno</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
 
-    </head>
+</head>
 
-    <body>
-        <div class="container">
-            <video src="vid/video0.mp4" type="video/mp4" id="video0"></video>
+<body>
+    <div class="container">
+        <div id="publi"><h1 style="color:red">TEXTO</h1></div>
+        <div id="videoPrincipal"><video src="vid/video0.mp4" type="video/mp4" id="video0"></video></div>
+        
 
-            <div id="controladores">
-                <ul>
-                    <li><img id="silencio" src="img/silenciarVolumen.png"></li>
-                    <li><img id="volverInicio" src="img/volverInicio.png"></li>
-                    <li><img id="volverAtras" src="img/tirarAtras.png"></li>
-                    <li><img id="estado" src="img/play.png"></li>
-                    <li><img id="irAlante" src="img/tirarAlante.png"></li>
-                    <li><img id="irFinal" src="img/tirarFinal.png"></li>
-                    <li><img id="bajarVolumen" src="img/bajarVolumen.png"></li>
-                    <li><img id="subirVolumen" src="img/subirVolumen.png"></li>
-                </ul>
+        <div id="controladores">
+            <ul>
+                <li><img id="silencio" src="img/silenciarVolumen.png"></li>
+                <li><img id="volverInicio" src="img/volverInicio.png"></li>
+                <li><img id="volverAtras" src="img/tirarAtras.png"></li>
+                <li><img id="estado" src="img/play.png"></li>
+                <li><img id="irAlante" src="img/tirarAlante.png"></li>
+                <li><img id="irFinal" src="img/tirarFinal.png"></li>
+                <li><img id="bajarVolumen" src="img/bajarVolumen.png"></li>
+                <li><img id="subirVolumen" src="img/subirVolumen.png"></li>
+            </ul>
+            <div>
+                <p><progress id="barraVolumen" min="0" max="100" value="100"></progress></p>
+            </div>
+            <div>
+                <p><progress id="barraVideo" min="0" max="100" value="0"></progress></p>
             </div>
         </div>
-    </body>
+
+    </div>
+</body>
 
 </html>

@@ -8,7 +8,8 @@ function cargar() {
     document.getElementById("irFinal").addEventListener("click", finalVideo);
     document.getElementById("volverAtras").addEventListener("click", volverAtras);
     document.getElementById("irAlante").addEventListener("click", irAlante);
-    
+    document.getElementById("video0").addEventListener("timeupdate", barraVideo, false);
+
 }
 
 function obtenerVideo(element) {
@@ -26,30 +27,39 @@ function iniciarVideo() {
 
     var video = obtenerVideo(this);
 
-    if(video.paused){
+    if (video.paused) {
         video.play();
         this.src = "img/pause.png";
     } else {
         video.pause();
         this.src = "img/play.png";
     }
+
 }
 
 function silencio() {
 
     var video = obtenerVideo(this);
+    var barra = document.getElementById("barraVolumen");
 
-    if(video.volume != 0) {
+    if (video.volume != 0) {
         video.volume = 0;
-    } 
+        barra.value = 0;
+    }
 }
 
 function subirVolumen() {
     var video = obtenerVideo(this);
     var actualVolumen = video.volume;
+    var barra = document.getElementById("barraVolumen");
 
-    if(video.volume >= 0 && video.volume < 0.9){
+    if (video.volume >= 0 && video.volume < 0.9) {
         video.volume = actualVolumen + 0.1;
+        barra.value = (actualVolumen + 0.1) * 100;
+    } else {
+        if (video.volume == 0.9) {
+            barra.value = 100;
+        }
     }
 
 }
@@ -57,10 +67,12 @@ function subirVolumen() {
 function bajarVolumen() {
     var video = obtenerVideo(this);
     var actualVolumen = video.volume;
+    var barra = document.getElementById("barraVolumen");
 
-    if(video.volume <= 1 && video.volume > 0.1){
+    if (video.volume <= 1 && video.volume > 0.1) {
         video.volume = actualVolumen - 0.1;
-    } 
+        barra.value = (actualVolumen - 0.1) * 100;
+    }
 }
 
 function volverInicio() {
@@ -90,4 +102,12 @@ function irAlante() {
 
     video.currentTime = videoActual + 5.0;
 
+}
+
+function barraVideo() {
+    var momentoVideo = this.currentTime;
+    var total = this.duration;
+    var barra = document.getElementById("barraVideo");
+
+    barra.value = (100 * momentoVideo) / total;
 }

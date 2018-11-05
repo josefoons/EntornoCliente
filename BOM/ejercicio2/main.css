@@ -44,3 +44,28 @@ video {
     margin-top: 2%;
     margin-left: 10%;
 }
+
+#barraVolumen {
+    position:absolute;
+    left:calc(50% - 240px);
+    width:480px;
+}
+
+#barraVideo {
+    position:absolute;
+    left:calc(50% - 240px);
+    width:480px;
+    top: 100px;
+}
+
+#navi {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+#videoPrincipal {
+  z-index: -1;
+}
