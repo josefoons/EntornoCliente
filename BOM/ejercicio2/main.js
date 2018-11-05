@@ -9,6 +9,7 @@ function cargar() {
     document.getElementById("volverAtras").addEventListener("click", volverAtras);
     document.getElementById("irAlante").addEventListener("click", irAlante);
     document.getElementById("video0").addEventListener("timeupdate", barraVideo, false);
+    document.getElementById("salirPubli").addEventListener("click",salirPubli);
 
 }
 
@@ -110,4 +111,9 @@ function barraVideo() {
     var barra = document.getElementById("barraVideo");
 
     barra.value = (100 * momentoVideo) / total;
+}
+
+function salirPubli() {
+    var publi = document.getElementById("oculto");
+    publi.style.visibility = "hidden";
 }
