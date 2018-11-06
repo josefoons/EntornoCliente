@@ -13,32 +13,48 @@
 
 <body>
     <div class="container">
-
-        <div>
-            <video src="vid/video0.mp4" type="video/mp4" id="video0"></video>
-        </div>
-
-        <div id="controladores">
-            <ul>
-                <li><img id="silencio" src="img/silenciarVolumen.png"></li>
-                <li><img id="volverInicio" src="img/volverInicio.png"></li>
-                <li><img id="volverAtras" src="img/tirarAtras.png"></li>
-                <li><img id="estado" src="img/play.png"></li>
-                <li><img id="irAlante" src="img/tirarAlante.png"></li>
-                <li><img id="irFinal" src="img/tirarFinal.png"></li>
-                <li><img id="bajarVolumen" src="img/bajarVolumen.png"></li>
-                <li><img id="subirVolumen" src="img/subirVolumen.png"></li>
-            </ul>
+        <div id="columna">
             <div>
-                <p><progress id="barraVolumen" min="0" max="100" value="100"></progress></p>
+                <h1 id="tituloVideo">video0</h1>
+                <video src="./vid/video0.mp4" type="video/mp4" id="videoFull"></video>
             </div>
-            <div>
-                <p><progress id="barraVideo" min="0" max="100" value="0"></progress></p>
+
+            <div id="controladores">
+                <ul>
+                    <li><img id="silencio" src="img/silenciarVolumen.png"></li>
+                    <li><img id="volverInicio" src="img/volverInicio.png"></li>
+                    <li><img id="volverAtras" src="img/tirarAtras.png"></li>
+                    <li><img id="estado" src="img/play.png"></li>
+                    <li><img id="irAlante" src="img/tirarAlante.png"></li>
+                    <li><img id="irFinal" src="img/tirarFinal.png"></li>
+                    <li><img id="bajarVolumen" src="img/bajarVolumen.png"></li>
+                    <li><img id="subirVolumen" src="img/subirVolumen.png"></li>
+                </ul>
+                <div>
+                    <p><progress id="barraVolumen" min="0" max="100" value="100"></progress></p>
+                </div>
+                <div>
+                    <p><progress id="barraVideo" min="0" max="100" value="0">Volumen</progress></p>
+                </div>
+            </div>
+            <div id="oculto">
+                <div id="publi">
+                    <h1 id="salirPubli">X</h1>
+                </div>
             </div>
         </div>
-        <div id="oculto">
-            <div id="publi">
-                <h1 id="salirPubli">X</h1>
+        <div id="columnaR">
+            <div id="playlist">
+                <ul>
+                    <li>
+                        <h1>Videos Recomendados</h1>
+                        <ul>
+                            <li><button id="video0">Video0</button></li>
+                            <li><button id="video1">Video1</button></li>
+                            <li><button id="video2">Video2</button></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

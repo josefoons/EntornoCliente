@@ -33,29 +33,29 @@ video {
 #controladores {
     position:absolute;
     top: 460px;
-    left:calc(50% - 240px);
+    left: calc(25% - 240px);
     width:480px;
     
 }
 .container {
     position:relative;
-    width:800px;
+    width:100%;
     height:auto;
     margin-top: 2%;
-    margin-left: 10%;
 }
 
 #barraVolumen {
     position:absolute;
     left:calc(50% - 240px);
     width:480px;
+    visibility: hidden;
 }
 
 #barraVideo {
     position:absolute;
     left:calc(50% - 240px);
     width:480px;
-    top: 100px;
+    top: -40px;
 }
 
 #publi {
@@ -64,23 +64,44 @@ video {
     width: 300px;
     height: 250px;
     background-image: url(img/publi.jpeg);
-    
 }
 
 #salirPubli {
     color: black;
     float: right;
     margin-right: 10px;
+    z-index: 1000;
 }
 
-#video0 {
+#videoFull {
   z-index: -1;
 }
 
 #oculto {
-    width: 800px;
+    width: 50%;
     height: 600px;
     position: absolute;
     top: 0;
     left: 0;
+}
+
+#columna {
+    float: left;
+    width: 50%;
+    
+}
+
+#columnaR {
+    float: right;
+    width: 40%;
+}
+
+#salirPubli {
+    visibility: hidden;
+}
+
+#tituloVideo {
+    z-index: 100;
+    color: white;
+    margin-left: 40px;
 }
