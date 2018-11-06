@@ -30,7 +30,6 @@ function obtenerVideo(element) {
     return video[0];
 }
 
-
 function iniciarVideo() {
 
     var video = obtenerVideo(this);
@@ -184,3 +183,8 @@ function cambiarTitulo(element) {
     titulo.innerText = element;
 
 }
+
+/* function contadorPubli() {
+    var contador = document.getElementById("contadorPubli");
+    titulo.innerText = ;
+} */
