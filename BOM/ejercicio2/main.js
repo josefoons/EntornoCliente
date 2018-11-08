@@ -10,6 +10,8 @@ function cargar() {
     document.getElementById("irAlante").addEventListener("click", irAlante);
     document.getElementById("videoFull").addEventListener("timeupdate", barraVideo, false);
     document.getElementById("oculto").addEventListener("click", saltarPubli);
+    document.getElementById("videoFull").addEventListener("mouseover", mostrarInfo);
+    document.getElementById("videoFull").addEventListener("mouseout", quitarInfo);
 
     //botones de video
     document.getElementById("video0").addEventListener("click", cambiarVideo);
@@ -18,6 +20,7 @@ function cargar() {
 
     //Funciones a iniciar al cargar
     intervalo();
+    cuentaAtras();
 }
 
 function obtenerVideo(element) {
@@ -128,7 +131,7 @@ function activarPubli() {
 }
 
 function intervalo() {
-    setTimeout(activarX, 3000);
+    setTimeout(activarX, 10000);
 }
 
 function activarX() {
@@ -141,6 +144,7 @@ function salirPubli() {
     var publi = document.getElementById("oculto");
     publi.style.visibility = "hidden";
     document.getElementById("salirPubli").style.visibility = "hidden";
+    //setTimeout(actualVideoTitulo, 10000);
 }
 
 function saltarPubli() {
@@ -161,6 +165,7 @@ function cambiarVideo() {
     document.getElementById("barraVideo").value = 0;
     cambiarTitulo(id);
     activarPubli();
+    //actualVideoTitulo("visible");
 }
 
 
@@ -184,7 +189,49 @@ function cambiarTitulo(element) {
 
 }
 
-/* function contadorPubli() {
-    var contador = document.getElementById("contadorPubli");
-    titulo.innerText = ;
+/* function actualVideoTitulo(forma) {
+    var titulo = document.getElementById("tituloVideo");
+
+    if(forma == "visible"){
+        titulo.style.visibility = "visible";
+    } else {
+        titulo.style.visibility = "hidden";
+    }
 } */
+
+function mostrarInfo() {
+    
+    var barra = document.getElementById("barraVideo");
+    var titulo = document.getElementById("tituloVideo");
+
+    titulo.style.visibility = "visible";
+    barra.style.visibility = "visible";
+
+
+}
+
+function quitarInfo() {
+    
+    var barra = document.getElementById("barraVideo");
+    var titulo = document.getElementById("tituloVideo");
+
+    barra.style.visibility = "hidden";
+    titulo.style.visibility = "hidden";
+
+}
+
+function cuentaAtras() {
+    
+    var count = 10;
+    var number = document.getElementById('contador');
+    var intervalo = setInterval(function(){
+                       count--;
+                       number.innerHTML = count;
+                       if(count == 0){
+                         clearInterval(intervalo);
+                         number.innerHTML = "";
+                       }
+                      }, 1000);
+
+
+}
