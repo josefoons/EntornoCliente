@@ -22,6 +22,7 @@ div#tablero div {
     float: left;
     margin: 0px;
     font-size: 90px;
+    font-family: arial;
     text-align: center;
 }
 

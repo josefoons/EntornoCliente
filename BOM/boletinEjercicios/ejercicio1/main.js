@@ -1,5 +1,4 @@
 window.addEventListener("load", cargar, false);
-var turno = 0; // 0 = Player . 1 = CPU
 function cargar() {
     document.getElementById("celda1").addEventListener("click", ponerFicha);
     document.getElementById("celda2").addEventListener("click", ponerFicha);
@@ -12,6 +11,9 @@ function cargar() {
     document.getElementById("celda9").addEventListener("click", ponerFicha);
 }
 
+var turno = 0; // 0 = Player . 1 = CPU
+var fin = false;
+var casillas = document.getElementsByClassName("celda");
 
 function ponerFicha() {
 
@@ -19,14 +21,24 @@ function ponerFicha() {
         if (comprobarContenidoCelda(this)) {
             this.innerHTML = "X";
             turno = 1;
+            eliminarCeldaArray(this.id);
         }
     } else {
+        //CPU
         if (comprobarContenidoCelda(this)) {
-            this.innerHTML = "O";
-            turno = 0;
+            //this.innerHTML = "O";
+            colocarCPU();
+
         }
     }
-    turno();
+
+    ganador();
+
+    if (fin) {
+        reiniciar();
+    }
+
+
 }
 
 function comprobarContenidoCelda(elemento) {
@@ -39,10 +51,125 @@ function comprobarContenidoCelda(elemento) {
 
 }
 
-function comprobarVerticar(elemento) {
-    
-    var contador = 0;
+function comprobarVertical() {
 
-    if()
+
+    for (let index = 0; index < 3; index++) {
+
+        var cel1 = document.getElementById("celda" + (1 + index)).innerHTML;
+        var cel2 = document.getElementById("celda" + (4 + index)).innerHTML;
+        var cel3 = document.getElementById("celda" + (7 + index)).innerHTML;
+
+
+        if (cel1 == "O" && cel2 == "O" && cel3 == "O") {
+            //CPU
+            return "cpu";
+        }
+
+        if (cel1 == "X" && cel2 == "X" && cel3 == "X") {
+            //PLAYER
+            return "player";
+        }
+
+    }
+}
+
+function comprobarHorizontal() {
+
+
+    for (let index = 0; index < 3; index++) {
+
+        var cel1 = document.getElementById("celda" + (1 + index)).innerHTML;
+        var cel2 = document.getElementById("celda" + (2 + index)).innerHTML;
+        var cel3 = document.getElementById("celda" + (3 + index)).innerHTML;
+
+
+        if (cel1 == "O" && cel2 == "O" && cel3 == "O") {
+            //CPU
+            return "cpu";
+        }
+
+        if (cel1 == "X" && cel2 == "X" && cel3 == "X") {
+            //PLAYER
+            return "player";
+        }
+
+    }
+}
+
+function comprobarDiagonalDeToIz() {
+    var cel1 = document.getElementById("celda1").innerHTML;
+    var cel2 = document.getElementById("celda5").innerHTML;
+    var cel3 = document.getElementById("celda9").innerHTML;
+
+
+    if (cel1 == "O" && cel2 == "O" && cel3 == "O") {
+        //CPU
+        return "cpu";
+
+    }
+
+
+
+    if (cel1 == "X" && cel2 == "X" && cel3 == "X") {
+        //PLAYER
+        return "player";
+    }
+}
+
+function comprobarDiagonalIzToDer() {
+    var cel1 = document.getElementById("celda7").innerHTML;
+    var cel2 = document.getElementById("celda5").innerHTML;
+    var cel3 = document.getElementById("celda3").innerHTML;
+
+
+    if (cel1 == "O" && cel2 == "O" && cel3 == "O") {
+        //CPU
+        return "cpu";
+    }
+
+    if (cel1 == "X" && cel2 == "X" && cel3 == "X") {
+        //PLAYER
+        return "player";
+    }
+}
+
+function ganador() {
+
+    if (comprobarVertical() == "player" || comprobarHorizontal() == "player" || comprobarDiagonalIzToDer() == "player" || comprobarDiagonalDeToIz() == "player") {
+        fin = true;
+        return "Player";
+    }
+    if (comprobarVertical() == "cpu" || comprobarHorizontal() == "cpu" || comprobarDiagonalIzToDer() == "cpu" || comprobarDiagonalDeToIz() == "cpu") {
+        fin = true;
+        return "CPU";
+    }
 
 }
+
+function reiniciar() {
+    if (confirm("¿Reiniciar el juego?")) {
+        location.reload();
+    }
+}
+
+function colocarCPU() {
+    var ale = parseInt(Math.random() * (casillas.length - 1) + 1);
+    //alert(casillas[ale].id);
+
+    var celda = document.getElementById(casillas[ale].id);
+
+    if (celda.innerHTML == "") {
+        celda.innerHTML = "O";
+        turno = 0;
+        eliminarCeldaArray(celda);
+    }
+}
+
+function eliminarCeldaArray(elemento) {
+    //alert(elemento);
+    var index = casillas.indexOf(elemento);
+    if (index > -1) {
+        casillas.splice(index, 1);
+    }
+} 
