@@ -17,28 +17,26 @@ var casillas = document.getElementsByClassName("celda");
 
 function ponerFicha() {
 
-    if (turno == 0) {
-        if (comprobarContenidoCelda(this)) {
-            this.innerHTML = "X";
-            turno = 1;
-            eliminarCeldaArray(this.id);
-        }
-    } else {
-        //CPU
-        if (comprobarContenidoCelda(this)) {
-            //this.innerHTML = "O";
-            colocarCPU();
-
-        }
+    if (comprobarContenidoCelda(this)) {
+        this.innerHTML = "X";
+        eliminarCeldaArray(this);
     }
+    moveCPU();
 
     ganador();
-
     if (fin) {
         reiniciar();
     }
+}
 
+function moveCPU() {
+    //alert("moveCPU");
+    colocarCPU();
 
+    ganador();
+    if(fin) {
+        reiniciar();
+    }
 }
 
 function comprobarContenidoCelda(elemento) {
@@ -158,18 +156,24 @@ function colocarCPU() {
     //alert(casillas[ale].id);
 
     var celda = document.getElementById(casillas[ale].id);
-
+    //alert(celda.id);
     if (celda.innerHTML == "") {
         celda.innerHTML = "O";
-        turno = 0;
-        eliminarCeldaArray(celda);
-    }
+    } 
+    eliminarCeldaArray(celda);
+    
 }
 
-function eliminarCeldaArray(elemento) {
-    //alert(elemento);
-    var index = casillas.indexOf(elemento);
-    if (index > -1) {
-        casillas.splice(index, 1);
-    }
+function eliminarCeldaArray(elemento) { //celda1
+    console.log(casillas);
+    alert(elemento);
+    //document.getElementById(elemento).classList.remove("juega");
+    for(var cont = 0; cont < casillas.length; cont++){
+        if(elemento == casillas[cont]){
+            delete casillas[casillas.indexOf(elemento)];
+            //casillas.splice(cont, 1);
+        }
+    } 
+    console.log(casillas);   
 } 
+
