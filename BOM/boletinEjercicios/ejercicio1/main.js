@@ -1,5 +1,14 @@
-window.addEventListener("load", cargar, false);
+
+var turno = 0; // 0 = Player . 1 = CPU
+var fin = false;
+var casillas = new Array();
+var aux = new Array();
+
+
+
+
 function cargar() {
+    document.getElementById("celda0").addEventListener("click", ponerFicha);
     document.getElementById("celda1").addEventListener("click", ponerFicha);
     document.getElementById("celda2").addEventListener("click", ponerFicha);
     document.getElementById("celda3").addEventListener("click", ponerFicha);
@@ -8,35 +17,28 @@ function cargar() {
     document.getElementById("celda6").addEventListener("click", ponerFicha);
     document.getElementById("celda7").addEventListener("click", ponerFicha);
     document.getElementById("celda8").addEventListener("click", ponerFicha);
-    document.getElementById("celda9").addEventListener("click", ponerFicha);
-}
+    document.getElementById("reiniciar").addEventListener("click", reiniciar);
 
-var turno = 0; // 0 = Player . 1 = CPU
-var fin = false;
-var casillas = document.getElementsByClassName("celda");
+    aux = document.getElementsByClassName("celda");
+
+    for (var i = 0; i < aux.length ; i++) {
+        casillas[i] = aux[i].id;
+    }
+
+
+}
 
 function ponerFicha() {
 
     if (comprobarContenidoCelda(this)) {
         this.innerHTML = "X";
         eliminarCeldaArray(this);
+        document.getElementById(this.id).removeEventListener("click", ponerFicha);
+        
     }
-    moveCPU();
-
-    ganador();
-    if (fin) {
-        reiniciar();
-    }
-}
-
-function moveCPU() {
-    //alert("moveCPU");
     colocarCPU();
 
-    ganador();
-    if(fin) {
-        reiniciar();
-    }
+
 }
 
 function comprobarContenidoCelda(elemento) {
@@ -54,9 +56,9 @@ function comprobarVertical() {
 
     for (let index = 0; index < 3; index++) {
 
-        var cel1 = document.getElementById("celda" + (1 + index)).innerHTML;
-        var cel2 = document.getElementById("celda" + (4 + index)).innerHTML;
-        var cel3 = document.getElementById("celda" + (7 + index)).innerHTML;
+        var cel1 = document.getElementById("celda" + (0 + index)).innerHTML;
+        var cel2 = document.getElementById("celda" + (3 + index)).innerHTML;
+        var cel3 = document.getElementById("celda" + (6 + index)).innerHTML;
 
 
         if (cel1 == "O" && cel2 == "O" && cel3 == "O") {
@@ -77,9 +79,9 @@ function comprobarHorizontal() {
 
     for (let index = 0; index < 3; index++) {
 
-        var cel1 = document.getElementById("celda" + (1 + index)).innerHTML;
-        var cel2 = document.getElementById("celda" + (2 + index)).innerHTML;
-        var cel3 = document.getElementById("celda" + (3 + index)).innerHTML;
+        var cel1 = document.getElementById("celda" + (0 + index)).innerHTML;
+        var cel2 = document.getElementById("celda" + (1 + index)).innerHTML;
+        var cel3 = document.getElementById("celda" + (2 + index)).innerHTML;
 
 
         if (cel1 == "O" && cel2 == "O" && cel3 == "O") {
@@ -96,9 +98,9 @@ function comprobarHorizontal() {
 }
 
 function comprobarDiagonalDeToIz() {
-    var cel1 = document.getElementById("celda1").innerHTML;
-    var cel2 = document.getElementById("celda5").innerHTML;
-    var cel3 = document.getElementById("celda9").innerHTML;
+    var cel1 = document.getElementById("celda0").innerHTML;
+    var cel2 = document.getElementById("celda4").innerHTML;
+    var cel3 = document.getElementById("celda8").innerHTML;
 
 
     if (cel1 == "O" && cel2 == "O" && cel3 == "O") {
@@ -116,9 +118,9 @@ function comprobarDiagonalDeToIz() {
 }
 
 function comprobarDiagonalIzToDer() {
-    var cel1 = document.getElementById("celda7").innerHTML;
-    var cel2 = document.getElementById("celda5").innerHTML;
-    var cel3 = document.getElementById("celda3").innerHTML;
+    var cel1 = document.getElementById("celda6").innerHTML;
+    var cel2 = document.getElementById("celda4").innerHTML;
+    var cel3 = document.getElementById("celda2").innerHTML;
 
 
     if (cel1 == "O" && cel2 == "O" && cel3 == "O") {
@@ -146,34 +148,48 @@ function ganador() {
 }
 
 function reiniciar() {
-    if (confirm("¿Reiniciar el juego?")) {
-        location.reload();
+
+    for (let index = 0; index < 9; index++) {
+        document.getElementById("celda" + index).removeEventListener("click", ponerFicha);
     }
+
+    if(ganador() != undefined){
+        if (confirm("Ha ganado " + ganador() + " ¿Reiniciar el juego?")) {
+            location.reload();
+        }
+    } else {
+        if (confirm("No ha ganado nadie. ¿Reiniciar el juego?")) {
+            location.reload();
+        }
+    }
+
 }
 
 function colocarCPU() {
-    var ale = parseInt(Math.random() * (casillas.length - 1) + 1);
-    //alert(casillas[ale].id);
+    if(casillas.length > 0){
+        var ale = Math.floor(Math.random() * casillas.length);
+        var celda = document.getElementById(casillas[ale]);
+        if (celda.innerHTML == "") {
+            celda.innerHTML = "O";
+        } 
+        eliminarCeldaArray(celda);
+    }
 
-    var celda = document.getElementById(casillas[ale].id);
-    //alert(celda.id);
-    if (celda.innerHTML == "") {
-        celda.innerHTML = "O";
-    } 
-    eliminarCeldaArray(celda);
+    ganador();
+    if (fin) {
+        reiniciar();
+    }
     
 }
 
 function eliminarCeldaArray(elemento) { //celda1
-    console.log(casillas);
-    alert(elemento);
-    //document.getElementById(elemento).classList.remove("juega");
-    for(var cont = 0; cont < casillas.length; cont++){
-        if(elemento == casillas[cont]){
-            delete casillas[casillas.indexOf(elemento)];
-            //casillas.splice(cont, 1);
+    for(let cont = 0; cont < casillas.length; cont++){
+        /* alert(elemento.id + "     " + casillas[cont]); */
+        if(elemento.id == casillas[cont]){
+            casillas.splice(casillas.indexOf(elemento.id),1);
         }
     } 
-    console.log(casillas);   
+
 } 
 
+window.addEventListener("load", cargar, false);
