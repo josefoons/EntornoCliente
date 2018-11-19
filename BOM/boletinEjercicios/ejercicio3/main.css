@@ -1,0 +1,17 @@
+#rojo {
+    background-color: red;
+/*     left: 10px;
+    top: 10px; */
+}
+
+#azul {
+    background-color: blue;
+/*     top: 10px;
+    right: 10px; */
+}
+
+.rectangulo {
+    position: absolute;
+    width: 30px;
+    height: 100px;
+}
