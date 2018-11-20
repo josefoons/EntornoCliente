@@ -79,7 +79,7 @@ function resolver() {
     if (pantallaCalc.value.search("%") != -1) {
         var numeros = pantallaCalc.value.split("%")
 
-        resultado = (numeros[0] * numeros[1]) / 100;
+        resultado = (eval(numeros[0]) * eval(numeros[1])) / 100;
 
     } else {
         resultado = eval(pantallaCalc.value);
