@@ -198,6 +198,10 @@ function moveSelection(evt) {
         case 13:
             document.getElementById("result").click();
             break;
+//DESPUES DE ENTREGAR EL EXAMEN
+        case 96:
+            document.getElementById("0").click();
+            break;
 
     }
 }
